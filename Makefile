@@ -54,7 +54,7 @@ pkg:
 deb:
 	make clean
 	mkdir -p sandbox
-	( cd sandbox &&  git clone https://github.com/FreeRADIUS/freeradius-server.git )
+	( cd sandbox &&  git clone https://github.com/FreeRADIUS/freeradius-server.git && git checkout tags/release_2_1_10 )
 	cp -r src/rlm_linotp2 $(FREERADDIR)/src/modules/
 	cp -r src/rlm_linotp2/linotp2.conf $(FREERADDIR)/raddb/modules/linotp
 	cp -r src/rlm_linotp2/linotp $(FREERADDIR)/raddb/sites-available/
