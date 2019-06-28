@@ -33,7 +33,7 @@ getsource:
 	mkdir -p sandbox
 	( cd sandbox &&  git clone https://github.com/FreeRADIUS/freeradius-server.git )
 	cp -r src/rlm_linotp2 $(FREERADDIR)/src/modules/
-	cp -r src/rlm_linotp2/linotp2.conf $(FREERADDIR)/raddb/mods-available/linotp
+	cp -r src/rlm_linotp2/linotp2.conf $(FREERADDIR)/raddb/modules/linotp
 	cp -r src/rlm_linotp2/linotp $(FREERADDIR)/raddb/sites-available/
 	echo "rlm_linotp2" >> $(FREERADDIR)/src/modules/stable
 	( cd $(FREERADDIR) && ./configure )
@@ -46,7 +46,7 @@ build: src/rlm_linotp2/rlm_linotp2.c
 
 pkg:
 	cp -r src/rlm_linotp2 $(FREERADDIR)/src/modules/
-	cp -r src/rlm_linotp2/linotp2.conf $(FREERADDIR)/raddb/mods-available/linotp
+	cp -r src/rlm_linotp2/linotp2.conf $(FREERADDIR)/raddb/modules/linotp
 	cp -r src/rlm_linotp2/linotp $(FREERADDIR)/raddb/sites-available/
 	echo "rlm_linotp2" >> $(FREERADDIR)/src/modules/stable
 	( cd $(FREERADDIR) && dpkg-buildpackage -b )
@@ -56,7 +56,7 @@ deb:
 	mkdir -p sandbox
 	( cd sandbox &&  git clone https://github.com/FreeRADIUS/freeradius-server.git )
 	cp -r src/rlm_linotp2 $(FREERADDIR)/src/modules/
-	cp -r src/rlm_linotp2/linotp2.conf $(FREERADDIR)/raddb/mods-available/linotp
+	cp -r src/rlm_linotp2/linotp2.conf $(FREERADDIR)/raddb/modules/linotp
 	cp -r src/rlm_linotp2/linotp $(FREERADDIR)/raddb/sites-available/
 	echo "rlm_linotp2" >> $(FREERADDIR)/src/modules/stable
 	# remove iodbc, so that it will compile on ubuntu
