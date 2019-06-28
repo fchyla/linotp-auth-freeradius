@@ -31,7 +31,7 @@ info:
 
 getsource:
 	mkdir -p sandbox
-	( cd sandbox &&  git clone https://github.com/FreeRADIUS/freeradius-server.git )
+	( cd sandbox &&  git clone https://github.com/FreeRADIUS/freeradius-server.gitpi )
 	cp -r src/rlm_linotp2 $(FREERADDIR)/src/modules/
 	cp -r src/rlm_linotp2/linotp2.conf $(FREERADDIR)/raddb/modules/linotp
 	cp -r src/rlm_linotp2/linotp $(FREERADDIR)/raddb/sites-available/
