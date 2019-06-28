@@ -31,7 +31,7 @@ info:
 
 getsource:
 	mkdir -p sandbox
-	( cd sandbox &&  git clone https://anonscm.debian.org/git/pkg-freeradius/freeradius.git )
+	( cd sandbox &&  git clone https://github.com/FreeRADIUS/freeradius-server.git )
 	cp -r src/rlm_linotp2 $(FREERADDIR)/src/modules/
 	cp -r src/rlm_linotp2/linotp2.conf $(FREERADDIR)/raddb/modules/linotp
 	cp -r src/rlm_linotp2/linotp $(FREERADDIR)/raddb/sites-available/
@@ -54,7 +54,7 @@ pkg:
 deb:
 	make clean
 	mkdir -p sandbox
-	( cd sandbox &&  git clone https://anonscm.debian.org/git/pkg-freeradius/freeradius.git )
+	( cd sandbox &&  git clone https://github.com/FreeRADIUS/freeradius-server.git )
 	cp -r src/rlm_linotp2 $(FREERADDIR)/src/modules/
 	cp -r src/rlm_linotp2/linotp2.conf $(FREERADDIR)/raddb/modules/linotp
 	cp -r src/rlm_linotp2/linotp $(FREERADDIR)/raddb/sites-available/
