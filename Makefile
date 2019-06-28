@@ -69,6 +69,7 @@ deb:
 	#mv $(FREERADDIR)/debian/changelog.new $(FREERADDIR)/debian/changelog
 	head -n1 sandbox/freeradius-*/debian/changelog | cut -d' ' -f2 | sed  's/(\(.*\))/\1/' > freeradius-version.tmp
 	( export DEBEMAIL="linotp@keyidentity.com"; export DEBFULLNAME="KeyIdentity LinOTP Packaging"; cd $(FREERADDIR); dch -v 1:`cat ../../freeradius-version.tmp`-linotp$(LINOTP_VERSION) $(COMMENT) )
+	mk-build-deps --install $(FREERADDIR)/debian/control
 	( cd $(FREERADDIR) && dpkg-buildpackage -b )
 clean:
 	rm sandbox -fr
